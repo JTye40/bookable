@@ -25,8 +25,8 @@ public class Character {
     @Column(name = "name", nullable = false)
     private String name;
 
-    @Column(name = "traits", columnDefinition = "TEXT")
-    private String traits;
+    @Column(name = "aliases", columnDefinition = "TEXT")
+    private String aliases;
 
     @Column(name = "image_url")
     private String imageUrl;
@@ -35,11 +35,11 @@ public class Character {
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Character character = (Character) o;
-        return Objects.equals(id, character.id) && Objects.equals(content, character.content) && Objects.equals(name, character.name) && Objects.equals(traits, character.traits) && Objects.equals(imageUrl, character.imageUrl);
+        return Objects.equals(id, character.id) && Objects.equals(content, character.content) && Objects.equals(name, character.name) && Objects.equals(aliases, character.aliases) && Objects.equals(imageUrl, character.imageUrl);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, content, name, traits, imageUrl);
+        return Objects.hash(id, content, name, aliases, imageUrl);
     }
 }
